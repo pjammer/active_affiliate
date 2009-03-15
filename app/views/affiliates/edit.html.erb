@@ -1,0 +1,18 @@
+<h1>Editing affiliate</h1>
+
+<% form_for(@affiliate) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :paypal_email %><br />
+    <%= f.text_field :paypal_email %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @affiliate %> |
+<%= link_to 'Back', affiliates_path %>
