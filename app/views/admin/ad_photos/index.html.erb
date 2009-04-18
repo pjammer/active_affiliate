@@ -1,0 +1,38 @@
+<h1>Listing ad_photos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>User</th>
+    <th>Content type</th>
+    <th>Filename</th>
+    <th>Size</th>
+    <th>Parent</th>
+    <th>Thumbnail</th>
+    <th>Width</th>
+    <th>Height</th>
+  </tr>
+
+<% for ad_photo in @ad_photos %>
+  <tr>
+    <td><%=h ad_photo.name %></td>
+    <td><%=h ad_photo.description %></td>
+    <td><%=h ad_photo.user_id %></td>
+    <td><%=h ad_photo.content_type %></td>
+    <td><%=h ad_photo.filename %></td>
+    <td><%=h ad_photo.size %></td>
+    <td><%=h ad_photo.parent_id %></td>
+    <td><%=h ad_photo.thumbnail %></td>
+    <td><%=h ad_photo.width %></td>
+    <td><%=h ad_photo.height %></td>
+    <td><%= link_to 'Show', [:admin, ad_photo] %></td>
+    <td><%= link_to 'Edit', edit_admin_ad_photo_path(ad_photo) %></td>
+    <td><%= link_to 'Destroy', [:admin, ad_photo], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ad_photo', new_admin_ad_photo_path %>

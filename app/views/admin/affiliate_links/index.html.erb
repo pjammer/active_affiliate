@@ -1,0 +1,24 @@
+<h1>Listing Affiliate Links</h1>
+See your Affiliate Settings <%= link_to "here", admin_affiliate_setting_path(@affiliate_setting) %>
+<table>
+  <tr>
+    <th>Link Code</th>
+    <th>Link Type</th>
+    <th>Text in Ad</th>
+  </tr>
+
+<% for affiliate_link in @affiliate_links %>
+  <tr>
+    <td><%=h display_link(affiliate_link.ad_text, 1, 1)  %></td>
+    <td><%=h affiliate_link.link_type %></td>
+    <td><%=h affiliate_link.ad_text %></td>
+    <td><%= link_to 'Show', affiliate_link %></td>
+    <td><%= link_to 'Edit', edit_affiliate_link_path(affiliate_link) %></td>
+    <td><%= link_to 'Destroy', affiliate_link, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New affiliate_link', new_admin_affiliate_link_path %>

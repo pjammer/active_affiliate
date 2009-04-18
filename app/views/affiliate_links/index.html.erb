@@ -1,0 +1,21 @@
+<h1>Listing affiliate_links</h1>
+<%= will_paginate @affiliate_links %>
+<table>
+  <tr>
+    <th>Affiliate</th>
+    <th>Link type</th>
+    <th>Ad text</th>
+  </tr>
+
+<% for affiliate_link in @affiliate_links %>
+  <tr>
+    <td><%=h display_link(affiliate_link.ad_text, @affiliate.affiliate_code)  %></td>
+    <td><%=h affiliate_link.link_type %></td>
+    <td><%=h affiliate_link.ad_text %></td>
+    <td><%= link_to 'Show', affiliate_link %></td>
+    <td><%= link_to 'Edit', edit_affiliate_link_path(affiliate_link) %></td>
+    <td><%= link_to 'Destroy', affiliate_link, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

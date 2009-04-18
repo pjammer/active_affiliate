@@ -1,0 +1,52 @@
+<h1>Editing ad_photo</h1>
+
+<% form_for(@ad_photo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :content_type %><br />
+    <%= f.text_field :content_type %>
+  </p>
+  <p>
+    <%= f.label :filename %><br />
+    <%= f.text_field :filename %>
+  </p>
+  <p>
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.label :parent_id %><br />
+    <%= f.text_field :parent_id %>
+  </p>
+  <p>
+    <%= f.label :thumbnail %><br />
+    <%= f.text_field :thumbnail %>
+  </p>
+  <p>
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </p>
+  <p>
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ad_photo %> |
+<%= link_to 'Back', ad_photos_path %>

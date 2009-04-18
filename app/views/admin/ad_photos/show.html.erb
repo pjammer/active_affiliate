@@ -1,0 +1,55 @@
+
+<p>
+  <b>Name:</b>
+  <%=h @ad_photo.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @ad_photo.description %>
+</p>
+
+<p>
+  <%= image_tag(@ad_photo.public_filename, :id => "testImage") %></p><p>
+<div id="previewWrap"></div>
+<script type="text/javascript" language="javascript">function onEndCrop( coords, dimensions ) {
+	$( 'x1' ).value = coords.x1;
+	$( 'y1' ).value = coords.y1;
+	$( 'x2' ).value = coords.x2;
+	$( 'y2' ).value = coords.y2;
+	$( 'width' ).value = dimensions.width;
+	$( 'height' ).value = dimensions.height;
+};
+	Event.observe( window, 'load', function() {
+		new Cropper.ImgWithPreview(
+			'testImage',
+			{
+				previewWrap: 'previewWrap',
+				minWidth: 120,
+				minHeight: 120,
+				ratioDim: { x: 200, y: 120 },
+				onEndCrop: onEndCrop
+			}
+		);
+	} );
+</script>
+</p>
+
+<p>
+<% form_tag(crop_and_close_admin_ad_photo_path) do |f| -%>
+  
+
+	<%= text_field_tag :x1 %>
+	<%= text_field_tag :y1 %>
+	<%= text_field_tag :x2 %>
+	<%= text_field_tag :y2 %>
+	<%= text_field_tag :width %>
+	<%= text_field_tag :height %>
+	<%= submit_tag "Crop Image" %>
+	<% end -%>
+</p>
+
+
+
+<%= link_to 'Edit', edit_admin_ad_photo_path(@ad_photo) %> |
+<%= link_to 'Back', admin_ad_photos_path %>

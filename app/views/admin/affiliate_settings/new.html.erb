@@ -1,0 +1,8 @@
+<h1>New affiliate_setting</h1>
+
+<% form_for([:admin, @affiliate_setting]) do |f| %>
+<%= render :partial => 'form_fields', :locals => {:f => f, :button_name => "Create"}%>
+
+<% end %>
+
+<%= link_to 'Back', admin_affiliate_settings_path %>

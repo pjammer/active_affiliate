@@ -1,12 +1,12 @@
 class Admin::AffiliatesController < ApplicationController
   before_filter :login_required
-  before_filter :admin?
+  before_filter :has_role_admin
   layout "admin"
   #Show all users who are affiliates. 
   #TODO: Add a quick look table of what you owe to who. integrate into paypal somehow for them to send the money.
   def index
     @affiliates = @account.affiliates.paginate(:page => params[:page], :order => "id desc")
-
+    @affiliate = Affiliate.find_by_user_id(current_user)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @affiliates }

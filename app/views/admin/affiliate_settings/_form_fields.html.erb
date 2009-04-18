@@ -1,0 +1,9 @@
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :affiliate_percentage %><br />
+    <%= f.select :affiliate_percentage, AffiliateSetting::PERCENTAGES %>
+  </p>
+  <p>
+    <%= f.submit button_name %>
+  </p>

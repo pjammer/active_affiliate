@@ -1,0 +1,24 @@
+<h1>Editing affiliate_link</h1>
+
+<% form_for(@affiliate_link) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :affiliate_id %><br />
+    <%= f.text_field :affiliate_id %>
+  </p>
+  <p>
+    <%= f.label :link_type %><br />
+    <%= f.text_field :link_type %>
+  </p>
+  <p>
+    <%= f.label :ad_text %><br />
+    <%= f.text_field :ad_text %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @affiliate_link %> |
+<%= link_to 'Back', affiliate_links_path %>

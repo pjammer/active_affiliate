@@ -1,0 +1,18 @@
+<p>
+  <b>Affiliate:</b>
+  <%=h @affiliate_link.affiliate_id %>
+</p>
+
+<p>
+  <b>Link type:</b>
+  <%=h @affiliate_link.link_type %>
+</p>
+
+<p>
+  <b>Ad text:</b>
+  <%=h @affiliate_link.ad_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_affiliate_link_path(@affiliate_link) %> |
+<%= link_to 'Back', affiliate_links_path %>

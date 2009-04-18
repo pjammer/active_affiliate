@@ -3,6 +3,8 @@ class Affiliate < ActiveRecord::Base
 #TODO: remove these filters, add a lib/before_filters.rb file or comment out but include what SHOULD go there.
   belongs_to :account
   belongs_to :user
+  has_one :affiliate_setting
+  has_many :affiliate_links
   validates_presence_of :paypal_email
   validates_format_of :paypal_email, :with => Authentication.email_regex, :message => Authentication.bad_email_message
   #ToDo: add valadation that checks for user_id and account_id only one user and account_id combo allowed per account.

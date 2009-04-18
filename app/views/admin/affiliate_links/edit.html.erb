@@ -1,0 +1,8 @@
+<h1>Editing affiliate_link</h1>
+
+<% form_for([:admin, @affiliate_link]) do |f| %>
+  <%= render :partial => 'form_fields', :locals => {:f => f, :button_name => "Update"}%>
+<% end %>
+
+<%= link_to 'Show', [:admin, @affiliate_link] %> |
+<%= link_to 'Back', admin_affiliate_links_path %>

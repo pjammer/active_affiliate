@@ -1,0 +1,12 @@
+<%= f.error_messages %>
+  <p>
+	<%= f.label :link_type %><br />
+	<%= f.select :link_type, AffiliateLink::LINK_TYPES %> 
+  </p>
+  <p>
+    <%= f.label :ad_text %><br />
+    <%= f.text_field :ad_text %>
+  </p>
+  <p>
+    <%= f.submit button_name %>
+  </p>
