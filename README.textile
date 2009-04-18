@@ -38,12 +38,12 @@ More to come but check out the routes, and setup your affiliate_settings for sur
 
 One last thing will be adding this code to application_controller.rb
 
-	#check for an affiliate link on every login.  if found set the session variable.
+	##check for an affiliate link on every login.  if found set the session variable.
   	before_filter :affiliate_link_check
 
-	#check for affiliate links
+	##check for affiliate links
 	def affiliate_link_check
-	  session[:affiliate_id] = params[:affiliate_id] if params[:affiliate_id]
+		session[:affiliate_id] = params[:affiliate_id] if params[:affiliate_id]
 	end
 	
 this will change i'm sure from session to cookie.  There will also be more info about hooking this into your shopping cart, or whatever, so that people can get credit.
