@@ -8,9 +8,9 @@ h2.  Rails Plugin Dependencies
 
 Having used the built in rails engines feature of 2.3.2, you'll need the following two plugins available.
 
-* [technoweenies restful-authentication](http://github.com/technoweenie/restful-authentication/tree/master "technoweenies restful-authentication")
-* [mislav's will_paginate](http://github.com/mislav/will_paginate/tree/master "mislav's will_paginate")
-
+* [technoweenies restful-authentication](http://github.com/technoweenie/restful-authentication/tree/master)
+* [mislav's will_paginate](http://github.com/mislav/will_paginate/tree/master)
+[This link](http://example.net/)
 These are really standard plugins and you may have them installed already.
 
 
