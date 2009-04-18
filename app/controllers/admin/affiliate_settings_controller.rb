@@ -1,15 +1,15 @@
 class Admin::AffiliateSettingsController < ApplicationController
   before_filter :login_required
-  before_filter :has_role_admin
-  layout "admin"
+  # before_filter :has_role_admin
+  layout "affiliate_admin"
   # GET /affiliate_settings
   # GET /affiliate_settings.xml
   def index
-    @affiliate_settings = AffiliateSetting.find(:all)
+    @affiliate_setting = AffiliateSetting.first
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @affiliate_settings }
+      format.html # show.html.erb
+      format.xml  { render :xml => @affiliate_setting }
     end
   end
 
@@ -44,7 +44,7 @@ class Admin::AffiliateSettingsController < ApplicationController
   # POST /affiliate_settings.xml
   def create
     @affiliate_setting = AffiliateSetting.new(params[:affiliate_setting])
-    @affiliate_setting.account_id = current_account.id
+    # @affiliate_setting.account_id = current_account.id #used if you have an account based app.
     @affiliate_setting.user_id = current_user.id
     respond_to do |format|
       if @affiliate_setting.save

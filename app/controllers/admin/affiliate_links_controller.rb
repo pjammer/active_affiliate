@@ -1,12 +1,12 @@
 class Admin::AffiliateLinksController < ApplicationController
   before_filter :login_required
-  before_filter :has_role_admin
-  layout "admin"
+  # before_filter :has_role_admin
+  layout "affiliate_admin"
   # GET /affiliate_settings  # GET /affiliate_links
   # GET /affiliate_links.xml
   def index
     @affiliate_links = AffiliateLink.find(:all)
-    @affiliate_setting = AffiliateSetting.find_by_account_id(current_account)
+    #@affiliate_setting = AffiliateSetting.find_by_account_id(current_account)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @affiliate_links }

@@ -1,11 +1,11 @@
 class Admin::AffiliatesController < ApplicationController
   before_filter :login_required
-  before_filter :has_role_admin
-  layout "admin"
+  #before_filter :has_role_admin
+  layout "affiliate_admin"
   #Show all users who are affiliates. 
   #TODO: Add a quick look table of what you owe to who. integrate into paypal somehow for them to send the money.
   def index
-    @affiliates = @account.affiliates.paginate(:page => params[:page], :order => "id desc")
+    @affiliates = Affiliate.paginate(:page => params[:page], :order => "id desc")
     @affiliate = Affiliate.find_by_user_id(current_user)
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class Admin::AffiliatesController < ApplicationController
   end
 #Used to show the affiliates information like paypal addy and affiliate_code
   def show
-    @affiliate = @account.affiliates.find(params[:id])
+    @affiliate = Affiliates.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,7 +23,7 @@ class Admin::AffiliatesController < ApplicationController
   end
   #only admin can delete affiliates.  Right now is the easiest way to ensure someone doesn't accidently delete their affiliate account, losing all data.
   def destroy
-    @affiliate = @account.affiliate.find(params[:id])
+    @affiliate = Affiliate.find(params[:id])
     @affiliate.destroy
 
     respond_to do |format|

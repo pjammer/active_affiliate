@@ -1,7 +1,7 @@
 class Admin::AdPhotosController < ApplicationController
   before_filter :login_required
-  before_filter :has_role_admin
-  layout "admin"
+  # before_filter :has_role_admin
+  # layout "admin"
   # GET /ad_photos
   # GET /ad_photos.xml
   def index
