@@ -14,7 +14,7 @@ mislav's will_paginate
 These are really standard plugins and you may have them installed already.
 
 
-h2.  Installation
+h2. Installation
 
 Set up the two plugins above first
 
@@ -32,7 +32,7 @@ rake db:migrate
 
 That should be it.
 
-h2.  Useage
+h2. Useage
 
 More to come but check out the routes, and setup your affiliate_settings for sure.
 
