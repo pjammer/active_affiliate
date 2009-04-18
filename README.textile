@@ -8,9 +8,9 @@ h2.  Rails Plugin Dependencies
 
 Having used the built in rails engines feature of 2.3.2, you'll need the following two plugins available.
 
-* [technoweenies restful-authentication](http://github.com/technoweenie/restful-authentication/tree/master)
-* [mislav's will_paginate](http://github.com/mislav/will_paginate/tree/master)
-[This link](http://example.net/)
+* (http://github.com/technoweenie/restful-authentication/tree/master "technoweenies restful-authentication")
+* (http://github.com/mislav/will_paginate/tree/master "mislav's will_paginate")
+
 These are really standard plugins and you may have them installed already.
 
 
@@ -38,7 +38,7 @@ More to come but check out the routes, and setup your affiliate_settings for sur
 
 One last thing will be adding this code to application_controller.rb
 
-	##check for an affiliate link on every login.  if found set the session variable.
+	#check for an affiliate link on every login.  if found set the session variable.
   	before_filter :affiliate_link_check
 
 	##check for affiliate links
